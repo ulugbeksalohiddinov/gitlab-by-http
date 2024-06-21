@@ -22,7 +22,7 @@ ________________________________________________________________________________
 
 **Install gitlab-ce package**
 _________________________________________________________________________________________________
-- sudo EXTERNAL_URL="https or http://ip or domen" apt-get install gitlab-ce
+- sudo EXTERNAL_URL="https or http://ip/domen" apt-get install gitlab-ce
 
 
 **Install Gitlab-runner**
