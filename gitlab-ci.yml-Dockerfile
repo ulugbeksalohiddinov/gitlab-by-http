@@ -1,0 +1,32 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+
+build_image:
+  stage: build
+  image: docker:dind
+  script:
+    - docker build -t ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest .
+    - docker push ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest
+  only:
+    - main
+
+deploy_image:
+  stage: deploy
+  image: docker:dind
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  
+  script:
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker pull ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker rm -f ${CI_PROJECT_NAME} || true
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker rmi $(docker images -q) || true  
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker run --name ${CI_PROJECT_NAME} -dp 15553:5000 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest
+  only:
+    - main
