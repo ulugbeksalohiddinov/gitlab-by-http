@@ -1,0 +1,26 @@
+stages:
+  - deploy
+
+before_script:
+  - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+
+variables:
+  DEV_APP_PATH: "/home/user/cicd"
+
+deploy_image:
+  stage: deploy
+  image: docker:dind
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  
+  script:
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker rm -f my || true
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 docker image prune -a -f || true
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 "rm -r $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.182.129 "cd $DEV_APP_PATH && docker compose up -d"
+  only:
+    - main
