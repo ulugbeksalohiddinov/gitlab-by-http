@@ -1,6 +1,4 @@
 # gitlab-by-http
-gitlal via http
-Gitlab serverni ip va http orqali ko'tarish va config larini install qilish
 
 **Gitlab Server Install**
 
@@ -22,7 +20,7 @@ apt-cache madison gitlab-ce
 
 **Install gitlab-ce package**
 
-sudo EXTERNAL_URL="https://gitlab.zafarsaidov.uz" apt-get install gitlab-ce
+sudo EXTERNAL_URL="https://ip/domen" apt-get install gitlab-ce
 
 **Install Gitlab-runner**
 
