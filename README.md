@@ -25,6 +25,7 @@ ________________________________________________________________________________
 - sudo EXTERNAL_URL="https or http://ip|domen" apt-get install gitlab-ce
 
 
+
 **Install Gitlab-runner**
 _________________________________________________________________________________________________
 - curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
