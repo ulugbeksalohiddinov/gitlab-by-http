@@ -1,6 +1,4 @@
-# gitlab-by-http
-
-**Gitlab Server Install**
+# **Gitlab Server Install**
 
 **Dependencies**
 __________________________________________________________________________________________________
