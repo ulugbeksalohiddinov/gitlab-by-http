@@ -31,7 +31,7 @@
 #
 **Add gitlab registry via _/etc/gitlab/gitlab.rb_**
 
-**-- Container Registry settings --**
+  **-- Container Registry settings --**
 
 - _registry_external_url 'http://git.ulugbek.uz:5000_'
 
@@ -39,7 +39,7 @@
 
 - _registry['registry_http_addr'] = "0.0.0.0:5000_"
 
-**-- Registry NGINX --**
+  **-- Registry NGINX --**
 
 - _registry_nginx['enable'] = false_
 
