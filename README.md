@@ -45,5 +45,5 @@
 
 **Restart gitlab-ctl**
 
-   sudo gitlab-ctl reconfigure
+     sudo gitlab-ctl reconfigure
 
