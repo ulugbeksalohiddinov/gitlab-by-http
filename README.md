@@ -43,3 +43,7 @@
 
 - _registry_nginx['enable'] = false_
 
+**Restart gitlab-ctl**
+
+- gitlab-ctl reconfigure
+
