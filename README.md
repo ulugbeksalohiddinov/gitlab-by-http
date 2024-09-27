@@ -41,5 +41,5 @@
 
 **-- Registry NGINX --**
 
-*- _registry_nginx['enable'] = false_
+- _registry_nginx['enable'] = false_
 
