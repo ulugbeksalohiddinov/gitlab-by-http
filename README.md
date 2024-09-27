@@ -2,9 +2,9 @@
 
 **Dependencies**
 
-   - sudo apt-get update
-   - sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
-   - sudo apt-get install -y postfix
+     sudo apt-get update
+     sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
+     sudo apt-get install -y postfix
 #
 **Set gitlab repository**
 
