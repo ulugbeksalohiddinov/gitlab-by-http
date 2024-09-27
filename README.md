@@ -33,7 +33,7 @@
 
 **-- Container Registry settings --**
 
-**- _registry_external_url '[http://git.ulugbek.uz:5000_'**
+**- _registry_external_url 'http://git.ulugbek.uz:5000_'**
 
 **- _registry['enable'] = true_**
 
