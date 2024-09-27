@@ -30,7 +30,7 @@
 - sudo apt-get install gitlab-runner
 #
 **Add gitlab registry via _/etc/gitlab/gitlab.rb_**
-_________________________________________________________________________________________________
+
 **-- Container Registry settings --**
 
 **- _registry_external_url '[http://git.ulugbek.uz:5000_'**
