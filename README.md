@@ -21,7 +21,9 @@
 
     sudo EXTERNAL_URL="https or http://ip|domen" apt-get install gitlab-ce
  
-    **Example:** sudo EXTERNAL_URL="http://gitlab.ulugbek.uz" apt-get install gitlab-ce
+    **Example:** 
+    
+    sudo EXTERNAL_URL="http://gitlab.ulugbek.uz" apt-get install gitlab-ce
 #
 **Install Gitlab-runner**
 
