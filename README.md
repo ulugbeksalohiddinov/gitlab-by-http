@@ -56,3 +56,11 @@
 **Gitlab-runner restart**
 
     gitlab-runner restart
+#
+**docker:dind connect server docker engine - /etc/gitlab-runner/config.toml**
+**-- Registry NGINX --**
+  - volumes = ["/cashe", "/var/run/docker.sock:/var/run/docker.sock"]
+  -  _privileged = true_
+
+Nechta runner bo'sa hammasiga qo'shish kerak
+    
