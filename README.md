@@ -52,4 +52,7 @@
 **Using many runners at the moment - /etc/gitlab-runner/config.toml**
 
   -  _concurrent = n_
-    
+#
+**Gitlab-runner restart**
+
+    gitlab-runner restart
