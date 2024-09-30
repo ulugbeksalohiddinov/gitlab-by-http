@@ -64,4 +64,7 @@
   -  _privileged = true_
 
 Nechta runner bo'sa hammasiga qo'shish kerak
+
+     gitlab-runner restart
+
     
