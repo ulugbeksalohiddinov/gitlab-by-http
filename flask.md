@@ -17,8 +17,9 @@ if __name__ == "__main__":
 ```
 
 #    
-**Dockerfile**
+Dockerfile
 
+```
 FROM python:3.11.4-alpine3.18
 
 RUN apk update
@@ -36,6 +37,10 @@ COPY . .
 
 CMD [ "python", "main.py" ]
 
+```
+#
 requirements.txt
 
+```
 Flask==2.2.3
+```
