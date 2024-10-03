@@ -71,4 +71,10 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 **Gitlabdan imagelarni tortish uchun server(host)dan ham gitlabga Login qilip qo'yish kerak **
 
      docker login
+#
+**Gitlab-runnerni  git.ulugbek.uz/git/dev repositoryga ulash  /etc/gitlab-runner/config.toml** 
+
+**-- [runners.docker] --**
+ 
+  - extra_hosts = ["git.ulugbek.uz:192.168.15.128"]
     
