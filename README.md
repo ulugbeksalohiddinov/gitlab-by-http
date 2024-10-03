@@ -77,13 +77,13 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
         gitlab-runner restart
 #
-**Gitlabdan imagelarni tortish uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
-
-     docker login
-#
 **Dockerga Registrni qayerdan olishni ko'rsatish /etc/docker/daemon.json**
  
   - { "insecure-registries":["git.ulugbek.uz:5000"] }
 
 
           sudo service docker restart
+#
+**Gitlabdan imagelarni tortish uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
+
+     docker login
