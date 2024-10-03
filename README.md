@@ -84,6 +84,6 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
           sudo service docker restart
 #
-**Gitlabdan imagelarni tortish uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
+**Gitlabdan imagelarni pull-push uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
 
      docker login git.ulugbek.uz:5000
