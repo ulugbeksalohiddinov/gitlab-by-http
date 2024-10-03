@@ -89,6 +89,8 @@ Nechta runner bo'sa hammasiga qo'shish kerak
      docker login git.ulugbek.uz:5000
 
 #
+**.TXT**
+
 Groupdagi projectni (repository)ni **Vareble**ga contener ko'tariladigan host serverni **id_rsa(privet)** keyini qo'shamiz.
 
 Gitlabni ssh qismiga kod **push** qilinadigan PCni va **pull** qilinadigan host serverni **id_rsa.pub(public)** keyini qo'shamiz.
