@@ -85,4 +85,5 @@ Nechta runner bo'sa hammasiga qo'shish kerak
  
   - { "insecure-registries":["git.ulugbek.uz:5000"] }
 
-     sudo service docker restart
+
+       sudo service docker restart
