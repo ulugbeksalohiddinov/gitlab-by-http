@@ -86,4 +86,4 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 #
 **Gitlabdan imagelarni tortish uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
 
-     docker login
+     docker login git.ulugbek.uz:5000
