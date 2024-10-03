@@ -79,4 +79,4 @@ Nechta runner bo'sa hammasiga qo'shish kerak
   - extra_hosts = ["git.ulugbek.uz:192.168.15.128"]
     
 
-         gitlab-runner restart
+    gitlab-runner restart
