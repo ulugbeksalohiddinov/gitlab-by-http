@@ -81,7 +81,7 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
      docker login
 #
-**Dockerga Registrni korsatish /etc/docker/daemon.json**
+**Dockerga Registrni qayerdan olishni ko'rsatish /etc/docker/daemon.json**
  
   - { "insecure-registries":["git.ulugbek.uz:5000"] }
 
