@@ -87,3 +87,8 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 **Gitlabdan imagelarni pull-push uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
 
      docker login git.ulugbek.uz:5000
+
+#
+Groupdagi projectni (repository)ni Vareblega contener ko'tariladigan hostni id_rsa(privet) keyini qo'shamiz.
+
+Gitlabni ssh qismiga kod push qilinadigan PCni id_rsa.pub(public) keyini qo'shamiz.
