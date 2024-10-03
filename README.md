@@ -91,6 +91,6 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 #
 **feedback**
 
-Groupdagi projectni (repository)ni **Vareble** qismiga contener ko'tariladigan host serverni **id_rsa(privet)** keyyi qo'shiladi.
+Contener ko'tariladigan host serverni **id_rsa(privet)** key olinib, Groupdagi projectni (repository)ni **Vareble** qismiga qo'shiladi
 
 Gitlabni ssh qismiga kod **push** qilinadigan PCni va **pull** qilinadigan host serverni **id_rsa.pub(public)** keyini qo'shiladi.
