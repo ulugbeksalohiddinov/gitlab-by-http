@@ -1,9 +1,11 @@
 git add .
+
 git commit -m "Initial commit"
+
 git push --set-upstream origin main
+
+
 ------------------------------------------------------------
-
-
 
 Push an existing Git repository
 
