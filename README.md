@@ -57,6 +57,13 @@
 
     gitlab-runner restart
 #
+**Gitlab-runnerni  git.ulugbek.uz/git/dev repositorysiga ulab push qilishi uchun runnerni configuratsiyasini change qilish kerak _/etc/gitlab-runner/config.toml_** 
+
+**-- [runners.docker] --**
+ 
+  - extra_hosts = ["git.ulugbek.uz:192.168.15.128"]
+
+#
 **Docker:dind connect server docker engine - /etc/gitlab-runner/config.toml**
 
 **-- Registry NGINX --**
