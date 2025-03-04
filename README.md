@@ -35,13 +35,16 @@
 
 **-- Container Registry settings --**
 
--   _registry_external_url 'http://git.ulugbek.uz:5000_'       Container Registry URLi
+
+    Container Registry URLi
+-   _registry_external_url 'http://git.ulugbek.uz:5000_'       
 
 -  _registry['enable'] = true_
 
 - _registry['registry_http_addr'] = "0.0.0.0:5000_"
 
-- _registry_nginx['enable'] = false_        ontainer Registry nginxga bog'lanmasdan to'g'irdan to'g'ri ishlashi uchun
+    Container Registry nginxga bog'lanmasdan to'g'irdan to'g'ri ishlashi uchun
+- _registry_nginx['enable'] = false_        
 
 
 
