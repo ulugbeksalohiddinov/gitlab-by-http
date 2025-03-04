@@ -94,3 +94,8 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 Contener ko'tariladigan host serverni **id_rsa(privet)** key olinib, Groupdagi projectni (repository)ni **Vareble** qismiga qo'shiladi
 
 Gitlabni ssh qismiga kod **push** qilinadigan PCni va **pull** qilinadigan host serverni **id_rsa.pub(public)** keyini qo'shiladi.
+
+
+**Note**
+
+Qaysi serverga applicationni deploy qilmoqchi bo'lsak. Usha serverda ssh key generatsiya qilinadi. Qilingan keylardagi Public keyni authorized_keysga copy qilinadi. Privet keyni gitlabdagi repositryga yoki ush repository joylashgan guruhni varibel qismiga qo'shish kerak.
