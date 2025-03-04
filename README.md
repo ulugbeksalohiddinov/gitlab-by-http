@@ -98,4 +98,4 @@ Gitlabni ssh qismiga kod **push** qilinadigan PCni va **pull** qilinadigan host 
 
 **Note**
 
-Qaysi serverga applicationni deploy qilmoqchi bo'lsak. Usha serverda ssh key generatsiya qilinadi. Qilingan keylardagi Public keyni authorized_keysga copy qilinadi. Privet keyni gitlabdagi repositryga yoki ush repository joylashgan guruhni varibel qismiga qo'shish kerak.
+Qaysi serverga applicationni deploy qilmoqchi bo'lsak. Usha serverda ssh key generatsiya qilinadi. Qilingan keylardagi Public keyni **id_rsa.pub(public)**  authorized_keysga copy qilinadi. Privet keyni **id_rsa(privet)** gitlabdagi repositryga yoki ush repository joylashgan guruhni  **Vareble** qismiga qo'shish kerak.
