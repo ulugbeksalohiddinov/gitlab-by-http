@@ -49,7 +49,7 @@
 
      sudo gitlab-ctl reconfigure
 #
-**Using many runners at the moment - /etc/gitlab-runner/config.toml**
+**Using many runners at the moment - /etc/gitlab-runner/config.toml . Runner nechta bo'lsa n o'rniga shu sonni qo'yish kerak**
 
   -  _concurrent = n_
 #
