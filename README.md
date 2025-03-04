@@ -57,7 +57,7 @@
 
     gitlab-runner restart
 #
-**Gitlab-runnerni  _git.ulugbek.uz/group_name/repo_name_ repositorysiga ulanib push qilishi uchun runnerni configuratsiyasini change qilish kerak     _/etc/gitlab-runner/config.toml_** 
+**Gitlab-runnerni  _git.ulugbek.uz/group_name/repo_name_ repositorysiga ulanib push qilishi uchun runnerni configuratsiyasini change qilish kerak  _/etc/gitlab-runner/config.toml_** 
 
 **-- [runners.docker] --**
  
