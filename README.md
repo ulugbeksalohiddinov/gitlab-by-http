@@ -63,7 +63,8 @@
  
   - extra_hosts = ["git.ulugbek.uz:192.168.15.128"]
 
-  - gitlab-runner restart
+
+gitlab-runner restart
 
 #
 **Docker:dind connect server docker engine - /etc/gitlab-runner/config.toml**
