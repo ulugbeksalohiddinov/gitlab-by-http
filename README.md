@@ -79,7 +79,7 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
 #
 
-**Dockerga Registrni qayerdan olishni ko'rsatish /etc/docker/daemon.json**
+**Dockerga imageni push yoki pull qilganda default DockerHubga chiqadi. Uni local Gitlabdan http bilan olish uchun Gitlab addresini ko'rsatish kerak. Qaysi serverga Pull qilmoqchi bo'lsa shu server docker configuratsiyasini change qilish kerak _/etc/docker/daemon.json_**
  
   - { "insecure-registries":["git.ulugbek.uz:5000"] }
 
