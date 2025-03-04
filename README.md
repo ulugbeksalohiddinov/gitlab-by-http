@@ -78,15 +78,7 @@ Nechta runner bo'sa hammasiga qo'shish kerak
      gitlab-runner restart
 
 #
-**Gitlab-runnerni  git.ulugbek.uz/git/dev repositoryga ulash  /etc/gitlab-runner/config.toml** 
 
-**-- [runners.docker] --**
- 
-  - extra_hosts = ["git.ulugbek.uz:192.168.15.128"]
-    
-
-        gitlab-runner restart
-#
 **Dockerga Registrni qayerdan olishni ko'rsatish /etc/docker/daemon.json**
  
   - { "insecure-registries":["git.ulugbek.uz:5000"] }
