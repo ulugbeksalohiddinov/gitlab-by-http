@@ -41,7 +41,7 @@
 
 - _registry['registry_http_addr'] = "0.0.0.0:5000_"
 
-**-- Registry NGINX --**
+**-- Registry NGINX --**   agar shu qator bo'lmasa static holda qo'shish kerak -->
 
 - _registry_nginx['enable'] = false_
 
