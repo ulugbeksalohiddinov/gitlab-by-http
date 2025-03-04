@@ -31,7 +31,7 @@
 
     sudo apt-get install gitlab-runner
 #
-**Add gitlab registry via _/etc/gitlab/gitlab.rb_**
+**Odatda gitlab http url bilan ko'tarilganda Container Registry ko'tarilmaydi. Container Registry ishlashi uchun  gitlab configuratsiyasini change qilish kerak  _/etc/gitlab/gitlab.rb_**
 
 **-- Container Registry settings --**
 
