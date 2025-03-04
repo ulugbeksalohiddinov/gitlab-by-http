@@ -67,7 +67,7 @@
 gitlab-runner restart
 
 #
-**Docker:dind connect server docker engine - /etc/gitlab-runner/config.toml**
+**Docker:dind servrdagi docker enginega bog'lanishi uchun runner configuratsiyasini change qilish kerak  - _/etc/gitlab-runner/config.toml_**
 
 **-- Registry NGINX --**
   - volumes = ["/cashe", "/var/run/docker.sock:/var/run/docker.sock"]
