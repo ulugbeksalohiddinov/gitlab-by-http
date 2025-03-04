@@ -89,13 +89,11 @@ Nechta runner bo'sa hammasiga qo'shish kerak
      docker login git.ulugbek.uz:5000
 
 #
-**feedback**
-
-Contener ko'tariladigan host serverni **id_rsa(privet)** key olinib, Groupdagi projectni (repository)ni **Vareble** qismiga qo'shiladi
-
-Gitlabni ssh qismiga kod **push** qilinadigan PCni va **pull** qilinadigan host serverni **id_rsa.pub(public)** keyini qo'shiladi.
 
 
 **Note**
 
 Qaysi serverga applicationni deploy qilmoqchi bo'lsak. Usha serverda ssh key generatsiya qilinadi. Qilingan keylardagi Public keyni **id_rsa.pub(public)**  shu serverdagi _authorized_keys_ ga ko'chiriladi _**copy cat id_rsa.pub >> authorized_keys**_ qilinadi. Privet keyni **id_rsa(privet)** gitlabdagi repositryga yoki ush repository joylashgan guruhni  **Vareble** qismiga qo'shish kerak.
+
+
+Gitlabga pull push qilish uchun Gitlab turgan serverni va Application turgan serverni docker login qilib qo'yish kerak
