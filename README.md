@@ -86,11 +86,6 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
           sudo service docker restart
 #
-**Gitlabdan imagelarni pull-push uchun server(host)dan ham gitlabga Login qilip qo'yish kerak**
-
-     docker login git.ulugbek.uz:5000
-
-#
 
 
 **Note**
@@ -99,3 +94,5 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
 
 - Gitlabga pull push qilish uchun Gitlab turgan serverni va Application turgan serverni docker login qilib qo'yish kerak
+
+        docker login git.ulugbek.uz:5000
