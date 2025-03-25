@@ -96,3 +96,6 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 - Gitlabga pull push qilish uchun Gitlab turgan serverni va Application turgan serverni docker login qilib qo'yish kerak
 
         docker login git.ulugbek.uz:5000
+#
+#
+test
