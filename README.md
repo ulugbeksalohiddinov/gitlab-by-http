@@ -93,6 +93,8 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
 - Qaysi serverga applicationni deploy qilmoqchi bo'lsak. Usha serverda ssh key generatsiya qilinadi. Qilingan keylardagi Public keyni **id_rsa.pub(public)**  shu serverdagi _authorized_keys_ ga ko'chiriladi _**copy cat id_rsa.pub >> authorized_keys**_ qilinadi. Privet keyni **id_rsa(privet)** gitlabdagi repositryga yoki ush repository joylashgan guruhni  **Vareble** qismiga qo'shish kerak.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 - Gitlabga pull push qilish uchun Gitlab turgan serverni va Application turgan serverni docker login qilib qo'yish kerak
 
