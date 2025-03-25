@@ -98,4 +98,13 @@ Nechta runner bo'sa hammasiga qo'shish kerak
         docker login git.ulugbek.uz:5000
 #
 #
-test
+#
+
+**Gitlabni https ko'rinishida ko'tarish**
+
+Domen e'lon qilingandan keyin:
+
+      sudo EXTERNAL_URL="https://gitlab.ulugbek.uz" apt-get install gitlab-ce
+
+
+
