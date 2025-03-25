@@ -102,9 +102,21 @@ Nechta runner bo'sa hammasiga qo'shish kerak
 
 **Gitlabni https ko'rinishida ko'tarish**
 
-Domen e'lon qilingandan keyin:
+  Domen e'lon qilingandan keyin:
 
       sudo EXTERNAL_URL="https://gitlab.ulugbek.uz" apt-get install gitlab-ce
 
 
+**/etc/gitlab/gitlab.rb filega o'zgartirishlar kiritiladi**
 
+          external_url 'https://gitlab.ulugbek.uz'
+          nginx['redirect_http_to_https'] = true
+          nginx['enable'] = true
+          nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
+          nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
+
+Keyin restart beriladi:
+
+          gitlab-ctl reconfigure
+          gitlab-ctl restart
+          
