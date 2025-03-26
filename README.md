@@ -120,3 +120,11 @@ Keyin restart beriladi:
           gitlab-ctl reconfigure
           gitlab-ctl restart
           
+**Agar container registry gitlabni ui qismida ko'rinmasa /etc/gitlab/gitlab.rb filega o'zgartirishlar kiritiladi registryni https bilan ishlatish**
+
+     gitlab_rails['registry_enabled'] = true
+     registry['enable'] = true
+
+      registry_external_url 'https://git-lab.mkb.uz:5050'
+      registry_nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
+      registry_nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
