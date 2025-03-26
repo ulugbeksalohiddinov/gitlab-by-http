@@ -125,6 +125,6 @@ Keyin restart beriladi:
      gitlab_rails['registry_enabled'] = true
      registry['enable'] = true
 
-      registry_external_url 'https://git-lab.mkb.uz:5050'
-      registry_nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
-      registry_nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
+     registry_external_url 'https://git-lab.mkb.uz:5050'
+     registry_nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
+     registry_nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
