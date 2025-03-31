@@ -19,7 +19,6 @@ build_image:
 
 deploy_image:
   stage: deploy
-  #image docker:dind
   image: ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/docker:dind
   before_script:
     - eval $(ssh-agent -s)
