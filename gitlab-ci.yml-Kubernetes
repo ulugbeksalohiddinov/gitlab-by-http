@@ -27,9 +27,9 @@ deploy_image:
     - chmod 700 ~/.ssh
   
   script:
-    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 kubectl delete deploy deploy-flask || true
-    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "rm -r $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "cd $DEV_APP_PATH && kubectl apply -f deploy-flask.yaml"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 kubectl delete deploy deploy-flask || true
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "rm -r $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "cd $DEV_APP_PATH && kubectl apply -f deploy-flask.yaml"
   only:
     - main
