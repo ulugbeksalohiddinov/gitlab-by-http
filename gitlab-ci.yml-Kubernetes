@@ -1,0 +1,36 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password $CI_REGISTRY_PASSWORD
+
+variables:
+  DEV_APP_PATH: "/home/user/.kube"
+
+build_image:
+  stage: build
+  image: ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/docker:dind
+  script:
+    - docker build -t ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest .
+    - docker push ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:latest
+  only:
+    - main
+
+deploy_image:
+  stage: deploy
+  #image docker:dind
+  image: ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/docker:dind
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  
+  script:
+    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 kubectl delete deploy deploy-flask || true
+    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "rm -r $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no root@172.23.0.14 "cd $DEV_APP_PATH && kubectl apply -f deploy-flask.yaml"
+  only:
+    - main
