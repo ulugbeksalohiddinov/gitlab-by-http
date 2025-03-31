@@ -7,6 +7,10 @@ before_script:
 
 variables:
   DEV_APP_PATH: "/home/user/.kube"
+  USER: "root"
+  HOST: "172.23.0.14"
+  DEPLOYMENT_YAML: "deploy-flask.yaml"
+  DEPLOYMENT_NAME: "deploy-flask" 
 
 build_image:
   stage: build
@@ -27,9 +31,9 @@ deploy_image:
     - chmod 700 ~/.ssh
   
   script:
-    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 kubectl delete deploy deploy-flask || true
-    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "rm -r $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no root@192.168.18.182 "cd $DEV_APP_PATH && kubectl apply -f deploy-flask.yaml"
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST kubectl delete deploy $DEPLOYMENT_NAME || true
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "rm -r $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "cd $DEV_APP_PATH && kubectl apply -f $DEPLOYMENT_YAML"
   only:
     - main
