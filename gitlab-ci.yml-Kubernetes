@@ -33,7 +33,7 @@ deploy_image:
   script:
     - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "rm -r $DEV_APP_PATH || true"
     - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST kubectl delete deploy $DEPLOYMENT_NAME || true
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST kubectl delete deploy $DEPLOYMENT_NAME || true     -shu ohirgi 2 ta qatordagi scriptni o'rniga "kubectl apply -f $MANIFEST_YAML" sinab ko'rish kerak
     - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "cd $DEV_APP_PATH && kubectl apply -f $MANIFEST_YAML"
   only:
     - main
