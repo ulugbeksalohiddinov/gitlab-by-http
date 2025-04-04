@@ -8,7 +8,7 @@ before_script:
 variables:
   DEV_APP_PATH: "/home/user/.kube"
   USER: "root"
-  HOST: "172.23.0.14"
+  HOST: "192.168.182.14"
   MANIFEST_YAML: "deploy-flask.yaml"
   DEPLOYMENT_NAME: "deploy-flask" 
 
@@ -31,9 +31,9 @@ deploy_image:
     - chmod 700 ~/.ssh
   
   script:
-    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "rm -r $DEV_APP_PATH || true"
     - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "git clone $CI_REPOSITORY_URL $DEV_APP_PATH || true"
-    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST kubectl delete deploy $DEPLOYMENT_NAME || true     -shu ohirgi 2 ta qatordagi scriptni o'rniga "kubectl apply -f $MANIFEST_YAML" sinab ko'rish kerak
-    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "cd $DEV_APP_PATH && kubectl apply -f $MANIFEST_YAML"
+   # - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "cd $DEV_APP_PATH && kubectl apply -f $MANIFEST_YAML" # 1- martta run qilish uchun
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "kubectl rollout restart deployment $DEPLOYMENT_NAME"
+    - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "rm -r $DEV_APP_PATH || true"
   only:
     - main
