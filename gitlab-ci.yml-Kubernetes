@@ -9,7 +9,7 @@ variables:
   DEV_APP_PATH: "/home/user/.kube"
   USER: "root"
   HOST: "192.168.182.14"
-  MANIFEST_YAML: "deploy-flask.yaml"
+  MANIFEST_YAML: "manifest-file.yaml"
   DEPLOYMENT_NAME: "deploy-flask" 
 
 build_image:
@@ -37,11 +37,14 @@ deploy_image:
     - ssh -p 22 -o StrictHostKeyChecking=no $USER@$HOST "rm -r $DEV_APP_PATH || true"
   only:
     - main
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+--- Add secret for private registry gitlab ---
 
 kubectl create secret docker-registry registry-secret --docker-server=git-lab.test.uz:5050 --docker-username=test-user --docker-password=token --docker-email=user@test.uz 
 
+--- Manifest ---
 
 apiVersion: apps/v1
 kind: Deployment
