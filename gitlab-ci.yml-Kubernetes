@@ -65,6 +65,7 @@ spec:
     spec:
       containers:
       - image: git-lab.mkb.uz:5050/u.salohiddinov/k8s:latest
+        imagePullPolicy: Always
         name: docker
         ports:
         - containerPort: 5500
