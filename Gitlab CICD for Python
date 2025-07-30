@@ -26,3 +26,40 @@ deploy:
     - ssh $DEV_USER@$DEV_HOST "git clone ssh://git@gitlab.mkb.uz:2222/mkb-assembly/backend.git"
     - ssh $DEV_USER@$DEV_HOST mv $DEV_PROJECT_NAME $DEV_APP_PATH/
     - ssh $DEV_USER@$DEV_HOST "mkdir -p $DEV_APP_PATH/ && cd $DEV_APP_PATH && docker-compose up --build -d"
+
+
+
+
+
+Dockerfile
+
+FROM python:3.12
+
+ENV HTTP_PROXY=http://17.2.22.1:3128
+ENV HTTPS_PROXY=http://17.2.22.1:3128
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN mkdir -p app/static/files
+RUN mkdir -p logs
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
+
+docker-compose.yml
+
+services:
+  backend:
+    build: .
+    container_name: mkb_assembly
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
