@@ -1,0 +1,28 @@
+variables:
+  DEV_APP_PATH: "/srv/projects/assembly"
+  DEV_USER: "root"
+  DEV_HOST: "172.23.1.14"
+  DEV_PROJECT_NAME: "backend"
+  DEV_APP_NAME: "mkb_assembly"
+  DEV_IMAGE_NAME: "assembly-backend"
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$GITLAB_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  tags:
+    - alpine
+    - shell
+
+  script:
+    - ssh $DEV_USER@$DEV_HOST rm -r  $DEV_APP_PATH
+    - ssh $DEV_USER@$DEV_HOST "docker rm -f $DEV_APP_NAME || true && docker rmi $DEV_IMAGE_NAME || true"
+    - ssh $DEV_USER@$DEV_HOST "git clone ssh://git@gitlab.mkb.uz:2222/mkb-assembly/backend.git"
+    - ssh $DEV_USER@$DEV_HOST mv $DEV_PROJECT_NAME $DEV_APP_PATH/
+    - ssh $DEV_USER@$DEV_HOST "mkdir -p $DEV_APP_PATH/ && cd $DEV_APP_PATH && docker-compose up --build -d"
